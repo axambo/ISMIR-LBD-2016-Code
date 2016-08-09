@@ -1,8 +1,8 @@
-#		python code
-#		script_name: Feature_space_viz
+#   python code
+#   script_name: Feature_space_viz
 #
-#		author: Anna Xambó
-#		description: Scatter plot of two different instruments. We need to add a sound of silence in one track of the DAW to make P5 work. Press Run, click on the Processing icon, and then press play.
+#   author: Anna Xambó
+#   description: Scatter plot of two different instruments. We need to add a sound of silence in one track of the DAW to make P5 work. Press Run, click on the Processing icon, and then press play.
 #
 
 from earsketch import *
@@ -69,6 +69,7 @@ normalizeFeaturesVector(group2_files_features, group2_files_features_norm)
 # TODO on rollover show audio filename
 def onLoop():
   drawRectangle(0,0,getCanvasWidth(), getCanvasHeight(), background_color)
+
   for i in range(0, len(group1_files)):
     scatter(group1_files_features_norm[0][i], group1_files_features_norm[1][i], size_marker, group1_color)
     #text(music_files[i], music_files_features[0][i], music_files_features[1][i])
@@ -84,7 +85,7 @@ def onLoop():
 
 
 def scatter(x_f1, y_f2, diameter, color):
-  width = offset + (getCanvasWidth()*x_f1)
+  width = getCanvasWidth()*x_f1
   drawCircle(width, getCanvasHeight()*y_f2, diameter, color)
 
 def text(title, x_f1, y_f2):
